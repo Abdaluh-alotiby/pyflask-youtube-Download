@@ -39,7 +39,14 @@ def download_video():
       return redirect(download_url)
   
 
-
+@app.route('/download_url', methods=['POST','GET'])
+def download_video():
+  if request.method == 'GET':
+    return redirect(url_for('home'))
+  if request.method.lower() == "post":
+      video_url = request.form.get('downloadURL')
+      download_url = YouTubeDownloadUseingRequest(video_url)
+      return download_url
 
 
 
