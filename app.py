@@ -40,7 +40,7 @@ def download_video():
   
 
 @app.route('/download_url', methods=['POST','GET'])
-def download_video():
+def download_url():
   if request.method == 'GET':
     return redirect(url_for('home'))
   if request.method.lower() == "post":
